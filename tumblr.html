@@ -137,20 +137,18 @@
 		<div class="postmeta">
 			{block:Date}
 			<p>
-				<span class="postdate">Posted {block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} at {24HourWithZero}:{Minutes}{/block:Date}</span>
-				{block:PostNotes}
-				<span class="notes">
-					with {NoteCountWithLabel}
+				<span class="postdate"><i class="fa fa-clock-o"></i> {block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} {24HourWithZero}:{Minutes}{/block:Date}</span>
+				{block:NoteCount}
+				{block:RebloggedFrom}
+				<span class="reblogged">
+					<i class="fa fa-retweet"></i>
+					<a class="reblogged-from" href="{ReblogParentURL}">{ReblogParentName}</a>
 				</span>
-				{/block:PostNotes}
+				{/block:RebloggedFrom}
+				<span class="notes"><i class="fa fa-heart"></i> {NoteCount}</span>
+				{/block:NoteCount}
 			</p>
 			{/block:Date}
-			{block:RebloggedFrom}
-			<span class="reblogged">
-				<i class="fa fa-exchange"></i>
-				<a class="reblogged-from" href="{ReblogParentURL}">{ReblogParentName}</a>
-			</span>
-			{/block:RebloggedFrom}
 			{block:HasTags}
 			<span class="tags">
 				<i class="fa fa-tag"></i>
@@ -159,6 +157,7 @@
 				{/block:Tags}
 			</span>
 			{/block:HasTags}
+			{block:PostNotes}{PostNotes}{/block:PostNotes}
 		</div>
 	</div>
 </div>

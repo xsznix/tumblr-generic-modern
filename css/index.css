@@ -19,9 +19,9 @@ h1, h2, h3, h4, h5, h6, div, span, th, td, p, li, dd, dt, blockquote {
 }
 
 blockquote {
-	border-left: 4px solid #e8e8e8;
 	margin-left: 0;
 	padding-left: 32px;
+	border-left: 4px solid #e8e8e8;
 }
 
 a {
@@ -165,9 +165,9 @@ nav a:hover {
 }
 
 .post .wrapper {
+	clear: both;
 	padding-top: 48px;
 	border-top: 1px solid #ddd;
-	clear: both;
 }
 
 .posticon, .like_button, .reblog_button {
@@ -195,12 +195,12 @@ nav a:hover {
 }
 
 .like_button, .reblog_button {
-	opacity: 0;
+	top: -19px;
 	width: 18px;
 	height: 18px;
-	line-height: 18px;
 	font-size: 16px;
-	top: -19px;
+	line-height: 18px;
+	opacity: 0;
 	-webkit-transition: opacity 100ms, margin-left 100ms;
 	-moz-transition: opacity 100ms, margin-left 100ms;
 	-ms-transition: opacity 100ms, margin-left 100ms;
@@ -246,10 +246,10 @@ img.postphoto:hover {
 }
 
 .posttitle {
-	font-family: 'Quattrocento Sans';
-	font-size: 28px;
-	font-weight: 400;
 	margin-top: 0;
+	font-weight: 400;
+	font-size: 28px;
+	font-family: 'Quattrocento Sans';
 }
 
 .postcontent {
@@ -316,6 +316,7 @@ img.postphoto:hover {
 
 .postmeta {
 	margin-top: 24px;
+	margin-left: 4px;
 	color: #ccc;
 	font-size: 14px;
 }
@@ -329,11 +330,17 @@ img.postphoto:hover {
 }
 
 .reblogged {
+	margin-left: 4px;
 	margin-right: 8px;
 }
 
 .reblogged-from {
-	margin-left: 4px;
+	margin-left: 2px;
+	color: inherit;
+}
+
+.reblogged-from:hover {
+	color: #3ba8e5;
 }
 
 .tags {
@@ -357,20 +364,20 @@ img.postphoto:hover {
 
 /* footer */
 #footerspacer {
-	height: 64px;
 	visibility: hidden;
+	height: 64px;
 }
 
 footer.layer {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	height: 64px;
 	background: #222;
 	color: #ccc;
 	font-size: 14px;
-	position: fixed;
-	height: 64px;
-	z-index: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
 }
 
 footer div {
