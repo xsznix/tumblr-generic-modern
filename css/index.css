@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6, div, span, th, td, p, li, dd, dt, blockquote {
 
 blockquote {
 	margin-left: 0;
+	margin-right: 0;
 	padding-left: 32px;
 	border-left: 4px solid #e8e8e8;
 }
@@ -107,9 +108,8 @@ nav.wrapper {
 	float: left;
 	width: 128px;
 	height: 128px;
-	border: 4px solid rgba(255,255,255,0.8);
+	border: 4px solid #102f40;
 	border-radius: 68px;
-	box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
 
 nav a {
