@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+	<title>{Title}</title>
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	<link rel="stylesheet" href="http://localhost:8000/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://localhost:8000/css/index.css">
+</head>
+<body>
+
+<!-- header -->
+<header class="layer">
+	<div class="wrapper">
+		<h1 class="blogtitle">{Title}</h1>
+		{block:Description}
+		<p class="blogdesc">{Description}</p>
+		{/block:Description}
+	</div>
+</header>
+
+<!-- navigation -->
+<nav>
+	<div class="wrapper">
+		<img src="{PortraitURL-128}" alt="Avatar" title="{MetaDescription}" id="blogicon">
+		<a href="/">Home</a>
+		{block:AskEnabled}<a href="/ask">{AskLabel}</a>{/block:AskEnabled}
+		{block:SubmissionsEnabled}<a href="/submit">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+		{block:HasPages}{block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}
+	</div>
+</nav>
+
+<!-- pagination -->
+<div class="layer pagination">
+	<div class="wrapper">
+		{block:Pagination}
+		{block:PreviousPage}<a href="{PreviousPage}" class="fa fa-chevron-left"></a>{/block:PreviousPage}
+		<span class="currpage"> Page {CurrentPage} of {TotalPages} </span>
+		{block:NextPage}<a href="{NextPage}" class="fa fa-chevron-right"></a>{/block:NextPage}
+		{/block:Pagination}
+		{block:PreviousPost}<a href="{PreviousPost}" class="fa fa-chevron-left"></a>{/block:PreviousPost}
+		{block:NextPost}<a href="{NextPost}" class="fa fa-chevron-right"></a>{/block:NextPost}
+	</div>
+</div>
+
+<!-- post -->
+{block:Posts}
+
+{block:Text}
+<div class="layer post text">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-pencil"></a>
+		{block:Title}<h2 class="posttitle">{Title}</h2>{/block:Title}
+		<div class="postcontent">{Body}</div>
+{/block:Text}
+
+{block:Photo}
+<div class="layer post photo">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-picture-o"></a>
+		<a href="{PhotoURL-HighRes}" class="postphoto"><img src="{PhotoURL-500}" alt="{PhotoAlt}" class="postphoto"></a>
+		{block:Caption}<div class="postcontent">{Caption}</div>{/block:Caption}
+{/block:Photo}
+
+{block:Photoset}
+<div class="layer post photoset">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-picture-o"></a>
+		{Photoset}
+		{block:Caption}<div class="postcontent">{Caption}</div>{/block:Caption}
+{/block:Photoset}
+
+{block:Quote}
+<div class="layer post quote">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-quote-right"></a>
+		<div class="postcontent">{Quote}</div>
+		{block:Source}<div class="quotecite">{Source}</div>{/block:Source}
+{/block:Quote}
+
+{block:Link}
+<div class="layer post link">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-link"></a>
+		<a class="postlink" href="{URL}" {Target}><h2 class="posttitle">{Name}</h2></a>
+		{block:Description}<div class="postcontent">{Description}</div>{/block:Description}
+{/block:Link}
+
+{block:Chat}
+<div class="layer post chat">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-comment"></a>
+		{block:Title}<h2 class="posttitle">{Title}</h2>{/block:Title}
+		<ul class="postcontent">
+			{block:Lines}
+			<li>{block:Label}<b>{Label}</b> {/block:Label}{Line}
+			{/block:Lines}
+		</ul>
+{/block:Chat}
+
+{block:Audio}
+<div class="layer post audio">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-music"></a>
+		{block:AudioEmbed}{AudioEmbed-500}{/block:AudioEmbed}
+		{block:AudioPlayer}{AudioPlayerGrey}{/block:AudioPlayer}
+		{block:Caption}<div class="postcontent">{Caption}</div>{/block:Caption}
+{/block:Audio}
+
+{block:Video}
+<div class="layer post video">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-video-camera"></a>
+		{Video-500}
+		{block:Caption}<div class="postcontent">{Caption}</div>{/block:Caption}
+{/block:Video}
+
+{block:Answer}
+<div class="layer post answer">
+	<div class="wrapper">
+		<a href="{Permalink}" class="posticon fa fa-question"></a>
+		<img class="asker-icon" src="{AskerPortraitURL-96}">
+		<div class="question"><div class="asker">{Asker}</div>{Question}</div>
+		{block:Answerer}<div class="answerer">{Answerer} answered:</div>{/block:Answerer}
+		<div class="postcontent">{Answer}</div>
+{/block:Answer}
+
+		<div class="postmeta">
+			<p>
+				<span class="postdate">Posted {block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} at {24HourWithZero}:{Minutes}{/block:Date}</span>
+				{block:PostNotes}
+				<span class="notes">
+					with {NoteCountWithLabel}
+				</span>
+				{/block:PostNotes}
+			</p>
+			{block:RebloggedFrom}
+			<span class="reblogged">
+				<i class="fa fa-exchange"></i>
+				<a class="reblogged-from" href="{ReblogParentURL}">{ReblogParentName}</a>
+			</span>
+			{/block:RebloggedFrom}
+			{block:HasTags}
+			<span class="tags">
+				<i class="fa fa-tag"></i>
+				{block:Tags}
+				<a href="{TagURL}" class="tag">{Tag}</a>
+				{/block:Tags}
+			</span>
+			{/block:HasTags}
+		</div>
+	</div>
+</div>
+
+{/block:Posts}
+
+<!-- pagination -->
+<div class="layer pagination">
+	<div class="wrapper">
+		{block:Pagination}
+		{block:PreviousPage}<a href="{PreviousPage}" class="fa fa-chevron-left"></a>{/block:PreviousPage}
+		<span class="currpage"> Page {CurrentPage} of {TotalPages} </span>
+		{block:NextPage}<a href="{NextPage}" class="fa fa-chevron-right"></a>{/block:NextPage}
+		{/block:Pagination}
+		{block:PreviousPost}<a href="{PreviousPost}" class="fa fa-chevron-left"></a>{/block:PreviousPost}
+		{block:NextPost}<a href="{NextPost}" class="fa fa-chevron-right"></a>{/block:NextPost}
+	</div>
+</div>
+
+<!-- footer -->
+<div class="layer" id="footerspacer">&nbsp;</div>
+
+<footer class="layer">
+	<div class="wrapper">
+		<div class="copyright">{Title} &copy; {CopyrightYears}</div>
+		<div class="theme">Theme: Generic Modern by xsznix</div>
+	</div>
+</footer>
+	
+</body>
+</html>
