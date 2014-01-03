@@ -126,6 +126,7 @@
 {/block:Answer}
 
 		<div class="postmeta">
+			{block:Date}
 			<p>
 				<span class="postdate">Posted {block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} at {24HourWithZero}:{Minutes}{/block:Date}</span>
 				{block:PostNotes}
@@ -134,6 +135,7 @@
 				</span>
 				{/block:PostNotes}
 			</p>
+			{/block:Date}
 			{block:RebloggedFrom}
 			<span class="reblogged">
 				<i class="fa fa-exchange"></i>
