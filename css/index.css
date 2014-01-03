@@ -170,7 +170,7 @@ nav a:hover {
 	clear: both;
 }
 
-.posticon {
+.posticon, .like_button, .reblog_button {
 	position: absolute;
 	top: -28px;
 	left: 50%;
@@ -189,10 +189,43 @@ nav a:hover {
 	line-height: 36px;
 }
 
-.posticon:hover {
+.posticon:hover, .like_button:hover, .reblog_button:hover {
 	border-color: #42baff;
 	color: #42baff;
-	cursor: pointer;
+}
+
+.like_button, .reblog_button {
+	opacity: 0;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	font-size: 16px;
+	top: -19px;
+	-webkit-transition: opacity 100ms, margin-left 100ms;
+	-moz-transition: opacity 100ms, margin-left 100ms;
+	-ms-transition: opacity 100ms, margin-left 100ms;
+	-o-transition: opacity 100ms, margin-left 100ms;
+	transition: opacity 100ms, margin-left 100ms;
+}
+
+.like_button {
+	margin-left: -57px;
+}
+
+.reblog_button {
+	margin-left: 21px;
+}
+
+.post:hover .like_button, .post:hover .reblog_button {
+	opacity: 1;
+}
+
+.post:hover .like_button {
+	margin-left: -62px;
+}
+
+.post:hover .reblog_button {
+	margin-left: 26px;
 }
 
 a.postphoto {
@@ -296,6 +329,10 @@ img.postphoto:hover {
 
 .reblogged {
 	margin-right: 8px;
+}
+
+.reblogged-from {
+	margin-left: 4px;
 }
 
 .tags {
