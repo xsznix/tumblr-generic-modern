@@ -325,8 +325,8 @@ img.postphoto:hover {
 	text-transform: uppercase;
 }
 
-.notes {
-	text-transform: uppercase;
+.notescount {
+	margin-left: 4px;
 }
 
 .reblogged {
