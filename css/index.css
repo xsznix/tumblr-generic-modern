@@ -314,11 +314,27 @@ img.postphoto:hover {
 	line-height: 150%;
 }
 
+a.tumblr_blog {
+	color: inherit;
+}
+
+a.tumblr_blog:hover {
+	color: #3ba8e5;
+}
+
 .postmeta {
 	margin-top: 24px;
 	margin-left: 4px;
 	color: #ccc;
 	font-size: 14px;
+}
+
+.postmeta a {
+	color: inherit;
+}
+
+.postmeta a:hover {
+	color: #3ba8e5;
 }
 
 .postdate {
@@ -335,11 +351,6 @@ img.postphoto:hover {
 
 .reblogged-from {
 	margin-left: 4px;
-	color: inherit;
-}
-
-.reblogged-from:hover {
-	color: #3ba8e5;
 }
 
 .tags {

@@ -137,7 +137,7 @@
 		<div class="postmeta">
 			{block:Date}
 			<p>
-				<span class="postdate"><i class="fa fa-clock-o"></i> {block:Date}{DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} {24HourWithZero}:{Minutes}{/block:Date}</span>
+				<span class="postdate"><i class="fa fa-clock-o"></i> {block:Date}<a href="{Permalink}">{DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} {24HourWithZero}:{Minutes}</a>{/block:Date}</span>
 				{block:NoteCount}
 				{block:RebloggedFrom}
 				<span class="reblogged">
@@ -145,7 +145,7 @@
 					<a class="reblogged-from" href="{ReblogParentURL}">{ReblogParentName}</a>
 				</span>
 				{/block:RebloggedFrom}
-				<span class="notescount"><i class="fa fa-heart"></i> {NoteCount}</span>
+				<span class="notescount"><i class="fa fa-heart"></i> <a href="{Permalink}">{NoteCount}</a></span>
 				{/block:NoteCount}
 			</p>
 			{/block:Date}
