@@ -372,6 +372,14 @@ a.tumblr_blog:hover {
 	content: "#";
 }
 
+.notes {
+	list-style-type: none;
+}
+
+.note .avatar {
+	margin-right: 6px;
+}
+
 /* footer */
 #footerspacer {
 	visibility: hidden;
