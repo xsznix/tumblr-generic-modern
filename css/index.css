@@ -18,6 +18,12 @@ h1, h2, h3, h4, h5, h6, div, span, th, td, p, li, dd, dt, blockquote {
 	font-family: 'Open Sans';
 }
 
+blockquote {
+	border-left: 4px solid #e8e8e8;
+	margin-left: 0;
+	padding-left: 32px;
+}
+
 a {
 	color: #318cbf;
 }
