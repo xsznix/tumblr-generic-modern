@@ -291,13 +291,17 @@ img.postphoto:hover {
 	box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
 }
 
-.asker {
+.asker-wrapper {
 	margin-bottom: 8px;
 	padding-bottom: 4px;
 	border-bottom: 1px solid #ddd;
 }
 
-.asker, .answerer {
+.asker {
+	text-decoration: none;
+}
+
+.asker-wrapper, .answerer {
 	color: #aaa;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -394,10 +398,25 @@ footer.layer {
 	z-index: 0;
 	height: 64px;
 	background: #222;
-	color: #ccc;
+	color: #aaa;
 	font-size: 14px;
 }
 
 footer div {
 	line-height: 200%;
+}
+
+.extlinks {
+	float: right;
+}
+
+.extlinks a {
+	margin: 8px;
+	font-size: 24px;
+	color: #aaa;
+	text-decoration: none;
+}
+
+.extlinks a:hover {
+	color: #3ba8e5;
 }
