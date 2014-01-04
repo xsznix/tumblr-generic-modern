@@ -131,8 +131,12 @@ nav a:hover {
 
 /* pagination */
 
-.layer.pagination {
+.layer.pagination.top {
 	padding-bottom: 36px;
+}
+
+.layer.pagination.bottom {
+	padding-top: 36px;
 }
 
 .pagination .wrapper {
