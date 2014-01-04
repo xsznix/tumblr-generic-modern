@@ -335,14 +335,12 @@ a.tumblr_blog:hover {
 
 .postmeta a {
 	color: inherit;
+	text-decoration: none;
 }
 
 .postmeta a:hover {
 	color: #3ba8e5;
-}
-
-.postdate {
-	text-transform: uppercase;
+	text-decoration: underline;
 }
 
 .notescount {
@@ -366,10 +364,6 @@ a.tumblr_blog:hover {
 	margin-left: 8px;
 	color: inherit;
 	text-decoration: none;
-}
-
-.tag:hover {
-	text-decoration: underline;
 }
 
 .tag:before {

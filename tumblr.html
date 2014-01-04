@@ -4,34 +4,18 @@
 	<title>{Title}</title>
 
 	<!-- customisation -->
+	<meta name="color:Header Background" content="#1c4e68">
+	<meta name="color:Navbar Background" content="#102f40">
 	<meta name="image:Header Background" content="">
 	<meta name="if:Show Theme Credit" content="">
-
-	<meta name="if:Show Facebook Link" content="0">
 	<meta name="text:Facebook Link" content="">
-
-	<meta name="if:Show Twitter Link" content="0">
 	<meta name="text:Twitter Link" content="">
-
-	<meta name="if:Show Google Plus Link" content="0">
 	<meta name="text:Google Plus Link" content="">
-
-	<meta name="if:Show Youtube Link" content="0">
 	<meta name="text:Youtube Link" content="">
-
-	<meta name="if:Show Instagram Link" content="0">
 	<meta name="text:Instagram Link" content="">
-
-	<meta name="if:Show Pinterest Link" content="0">
 	<meta name="text:Pinterest Link" content="">
-
-	<meta name="if:Show Linkedin Link" content="0">
 	<meta name="text:Linkedin Link" content="">
-
-	<meta name="if:Show Github Link" content="0">
 	<meta name="text:Github Link" content="">
-
-	<meta name="if:Show Bitbucket Link" content="0">
 	<meta name="text:Bitbucket Link" content="">
 
 	<!-- CSS and stuff -->
@@ -41,7 +25,14 @@
 	<link rel="stylesheet" href="http://xsznix.github.io/tumblr-generic-modern/css/index.css">
 	<style>
 		header.layer {
+			background-color: {color:HeaderBackground};
 			background-image: url('{image:Header Background}');
+		}
+		nav {
+			background: {color:NavbarBackground};
+		}
+		#blogicon {
+			border-color: {color:NavbarBackground};
 		}
 		{CustomCSS}
 	</style>
@@ -185,19 +176,16 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 		<div class="postmeta">
 			{block:Date}
-			<p>
-				<span class="postdate"><i class="fa fa-clock-o"></i> <a href="{Permalink}" title="{DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} {24HourWithZero}:{Minutes}">{TimeAgo}</a></span>
-				{block:RebloggedFrom}
-				<span class="reblogged">
-					<i class="fa fa-retweet"></i>
-					<a class="reblogged-from" href="{ReblogParentURL}">{ReblogParentName}</a>
-				</span>
-				{/block:RebloggedFrom}
-				{block:NoteCount}
-				<span class="notescount"><i class="fa fa-heart"></i> <a href="{Permalink}">{NoteCount}</a></span>
-				{/block:NoteCount}
-			</p>
-			{/block:Date}
+			<span class="postdate"><i class="fa fa-clock-o"></i> <a href="{Permalink}" title="{DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} {24HourWithZero}:{Minutes}">{TimeAgo}</a></span>
+			{block:RebloggedFrom}
+			<span class="reblogged">
+				<i class="fa fa-retweet"></i>
+				<a class="reblogged-from" href="{ReblogParentURL}">{ReblogParentName}</a>
+			</span>
+			{/block:RebloggedFrom}
+			{block:NoteCount}
+			<span class="notescount"><i class="fa fa-heart"></i> <a href="{Permalink}">{NoteCount}</a></span>
+			{/block:NoteCount}
 			{block:HasTags}
 			<span class="tags">
 				<i class="fa fa-tag"></i>
@@ -206,6 +194,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 				{/block:Tags}
 			</span>
 			{/block:HasTags}
+			{/block:Date}
 			{block:PostNotes}{PostNotes}{/block:PostNotes}
 		</div>
 	</div>
@@ -232,15 +221,15 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <footer class="layer">
 	<div class="wrapper">
 		<div class="extlinks">
-			{block:IfShowFacebookLink}<a href="{text:FacebookLink}" class="fa fa-facebook" target="_blank"></a>{/block:IfShowFacebookLink}
-			{block:IfShowTwitterLink}<a href="{text:TwitterLink}" class="fa fa-twitter" target="_blank"></a>{/block:IfShowTwitterLink}
-			{block:IfShowGooglePlusLink}<a href="{text:GooglePlusLink}" class="fa fa-google-plus" target="_blank"></a>{/block:IfShowGooglePlusLink}
-			{block:IfShowYoutubeLink}<a href="{text:YoutubeLink}" class="fa fa-youtube" target="_blank"></a>{/block:IfShowYoutubeLink}
-			{block:IfShowInstagramLink}<a href="{text:InstagramLink}" class="fa fa-instagram" target="_blank"></a>{/block:IfShowInstagramLink}
-			{block:IfShowPinterestLink}<a href="{text:PinterestLink}" class="fa fa-pinterest" target="_blank"></a>{/block:IfShowPinterestLink}
-			{block:IfShowLinkedinLink}<a href="{text:LinkedinLink}" class="fa fa-linkedin" target="_blank"></a>{/block:IfShowLinkedinLink}
-			{block:IfShowGithubLink}<a href="{text:GithubLink}" class="fa fa-github" target="_blank"></a>{/block:IfShowGithubLink}
-			{block:IfShowBitbucketLink}<a href="{text:BitbucketLink}" class="fa fa-bitbucket" target="_blank"></a>{/block:IfShowBitbucketLink}
+			{block:IfFacebookLink}<a href="{text:FacebookLink}" class="fa fa-facebook" target="_blank"></a>{/block:IfFacebookLink}
+			{block:IfTwitterLink}<a href="{text:TwitterLink}" class="fa fa-twitter" target="_blank"></a>{/block:IfTwitterLink}
+			{block:IfGooglePlusLink}<a href="{text:GooglePlusLink}" class="fa fa-google-plus" target="_blank"></a>{/block:IfGooglePlusLink}
+			{block:IfYoutubeLink}<a href="{text:YoutubeLink}" class="fa fa-youtube" target="_blank"></a>{/block:IfYoutubeLink}
+			{block:IfInstagramLink}<a href="{text:InstagramLink}" class="fa fa-instagram" target="_blank"></a>{/block:IfInstagramLink}
+			{block:IfPinterestLink}<a href="{text:PinterestLink}" class="fa fa-pinterest" target="_blank"></a>{/block:IfPinterestLink}
+			{block:IfLinkedinLink}<a href="{text:LinkedinLink}" class="fa fa-linkedin" target="_blank"></a>{/block:IfLinkedinLink}
+			{block:IfGithubLink}<a href="{text:GithubLink}" class="fa fa-github" target="_blank"></a>{/block:IfGithubLink}
+			{block:IfBitbucketLink}<a href="{text:BitbucketLink}" class="fa fa-bitbucket" target="_blank"></a>{/block:IfBitbucketLink}
 		</div>
 		<div class="copyright">{Title} &copy; {CopyrightYears}</div>
 		{block:IfShowThemeCredit}<div class="theme">Theme: <a href="https://github.com/xsznix/tumblr-generic-modern/tree/gh-pages">Generic Modern</a> by xsznix</div>{/block:IfShowThemeCredit}
