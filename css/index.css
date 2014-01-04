@@ -344,11 +344,11 @@ a.tumblr_blog:hover {
 }
 
 .notescount {
-	margin-left: 8px;
+	margin-left: 16px;
 }
 
 .reblogged {
-	margin-left: 8px;
+	margin-left: 16px;
 }
 
 .reblogged-from {
@@ -357,7 +357,7 @@ a.tumblr_blog:hover {
 
 .tags {
 	display: inline-block;
-	margin-left: 8px;
+	margin-left: 16px;
 }
 
 .tag {
