@@ -19,8 +19,8 @@ h1, h2, h3, h4, h5, h6, div, span, th, td, p, li, dd, dt, blockquote {
 }
 
 blockquote {
-	margin-left: 0;
 	margin-right: 0;
+	margin-left: 0;
 	padding-left: 32px;
 	border-left: 4px solid #e8e8e8;
 }
@@ -357,6 +357,7 @@ a.tumblr_blog:hover {
 
 .tags {
 	display: inline-block;
+	margin-left: 8px;
 }
 
 .tag {
@@ -406,9 +407,9 @@ footer div {
 
 .extlinks a {
 	margin: 8px;
-	font-size: 24px;
 	color: #aaa;
 	text-decoration: none;
+	font-size: 24px;
 }
 
 .extlinks a:hover {
