@@ -108,7 +108,7 @@ nav.wrapper {
 	float: left;
 	width: 128px;
 	height: 128px;
-	border: 4px solid #102f40;
+	border: 6px solid #102f40;
 	border-radius: 68px;
 }
 
@@ -121,7 +121,7 @@ nav a {
 }
 
 nav a:nth-of-type(1) {
-	margin-left: 20px;
+	margin-left: 18px;
 }
 
 nav a:hover {
