@@ -33,6 +33,12 @@ a:hover {
 	color: #3ba8e5;
 }
 
+/* main section colors */
+main {
+	background: #f8f8f8;
+	color: #222;
+}
+
 /* layer styling */
 
 .layer {

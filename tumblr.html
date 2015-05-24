@@ -21,8 +21,8 @@
 	<!-- CSS and stuff -->
 	<link rel="shortcut icon" href="{Favicon}">
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">
-	<link rel="stylesheet" href="http://xsznix.github.io/tumblr-generic-modern/css/font-awesome.min.css">
-	<link rel="stylesheet" href="http://xsznix.github.io/tumblr-generic-modern/css/index.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="//xsznix.github.io/tumblr-generic-modern/css/index.css">
 	<style>
 		header.layer {
 			background-color: {color:HeaderBackground};
@@ -36,16 +36,6 @@
 		}
 		{CustomCSS}
 	</style>
-	<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-41144558-2', 'tumblr.com');
-	ga('send', 'pageview');
-	var nothing = function (evt) {ga('send', 'event', 'User', 'Address', evt.host);};
-	</script>
-	<script type="text/javascript" src="http://smart-ip.net/geoip-json?callback=nothing"></script>
 </head>
 <body>
 
@@ -84,6 +74,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 </div>
 
 <!-- post -->
+<main>
 {block:Posts}
 
 {block:Text}
@@ -100,7 +91,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	<div class="wrapper">
 		<a href="{Permalink}" class="posticon fa fa-picture-o"></a>
 		{LikeButton size=18}{ReblogButton size=18}
-		<a href="{PhotoURL-HighRes}" class="postphoto"><img src="{PhotoURL-500}" alt="{PhotoAlt}" class="postphoto"></a>
+		<a href="{LinkURL}" class="postphoto"><img src="{PhotoURL-500}" alt="{PhotoAlt}" class="postphoto"></a>
 		{block:Caption}<div class="postcontent">{Caption}</div>{/block:Caption}
 {/block:Photo}
 
@@ -201,6 +192,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 </div>
 
 {/block:Posts}
+</main>
 
 <!-- pagination -->
 <div class="layer pagination bottom">
@@ -221,20 +213,31 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <footer class="layer">
 	<div class="wrapper">
 		<div class="extlinks">
-			{block:IfFacebookLink}<a href="{text:FacebookLink}" class="fa fa-facebook" target="_blank"></a>{/block:IfFacebookLink}
-			{block:IfTwitterLink}<a href="{text:TwitterLink}" class="fa fa-twitter" target="_blank"></a>{/block:IfTwitterLink}
-			{block:IfGooglePlusLink}<a href="{text:GooglePlusLink}" class="fa fa-google-plus" target="_blank"></a>{/block:IfGooglePlusLink}
-			{block:IfYoutubeLink}<a href="{text:YoutubeLink}" class="fa fa-youtube" target="_blank"></a>{/block:IfYoutubeLink}
-			{block:IfInstagramLink}<a href="{text:InstagramLink}" class="fa fa-instagram" target="_blank"></a>{/block:IfInstagramLink}
-			{block:IfPinterestLink}<a href="{text:PinterestLink}" class="fa fa-pinterest" target="_blank"></a>{/block:IfPinterestLink}
-			{block:IfLinkedinLink}<a href="{text:LinkedinLink}" class="fa fa-linkedin" target="_blank"></a>{/block:IfLinkedinLink}
-			{block:IfGithubLink}<a href="{text:GithubLink}" class="fa fa-github" target="_blank"></a>{/block:IfGithubLink}
-			{block:IfBitbucketLink}<a href="{text:BitbucketLink}" class="fa fa-bitbucket" target="_blank"></a>{/block:IfBitbucketLink}
+			{block:IfFacebookLink}<a href="{text:Facebook Link}" class="fa fa-facebook" target="_blank"></a>{/block:IfFacebookLink}
+			{block:IfTwitterLink}<a href="{text:Twitter Link}" class="fa fa-twitter" target="_blank"></a>{/block:IfTwitterLink}
+			{block:IfGooglePlusLink}<a href="{text:Google Plus Link}" class="fa fa-google-plus" target="_blank"></a>{/block:IfGooglePlusLink}
+			{block:IfYoutubeLink}<a href="{text:Youtube Link}" class="fa fa-youtube" target="_blank"></a>{/block:IfYoutubeLink}
+			{block:IfInstagramLink}<a href="{text:Instagram Link}" class="fa fa-instagram" target="_blank"></a>{/block:IfInstagramLink}
+			{block:IfPinterestLink}<a href="{text:Pinterest Link}" class="fa fa-pinterest" target="_blank"></a>{/block:IfPinterestLink}
+			{block:IfLinkedinLink}<a href="{text:Linkedin Link}" class="fa fa-linkedin" target="_blank"></a>{/block:IfLinkedinLink}
+			{block:IfGithubLink}<a href="{text:Github Link}" class="fa fa-github" target="_blank"></a>{/block:IfGithubLink}
+			{block:IfBitbucketLink}<a href="{text:Bitbucket Link}" class="fa fa-bitbucket" target="_blank"></a>{/block:IfBitbucketLink}
 		</div>
 		<div class="copyright">{Title} &copy; {CopyrightYears}</div>
 		{block:IfShowThemeCredit}<div class="theme">Theme: <a href="https://github.com/xsznix/tumblr-generic-modern/tree/gh-pages">Generic Modern</a> by xsznix</div>{/block:IfShowThemeCredit}
 	</div>
 </footer>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-41144558-2', 'tumblr.com');
+ga('send', 'pageview');
+var nothing = function (evt) {ga('send', 'event', 'User', 'Address', evt.host);};
+</script>
+<script type="text/javascript" src="http://smart-ip.net/geoip-json?callback=nothing"></script>
 	
 </body>
 </html>
