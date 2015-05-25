@@ -246,6 +246,7 @@ a.postphoto {
 
 img.postphoto {
 	display: block;
+	max-width: 100%;
 	margin: 6px auto 36px auto;
 	outline: 1px solid #e0e0e0;
 	border: 3px solid #fff;
@@ -265,6 +266,7 @@ img.postphoto:hover {
 .postcontent {
 	text-align: justify;
 	line-height: 150%;
+	word-wrap: break-word;
 }
 
 .quote .postcontent {
@@ -424,4 +426,18 @@ footer div {
 
 .extlinks a:hover {
 	color: #3ba8e5;
+}
+
+@media screen and (max-width: 564px) {
+	.tumblr_video_container, .tumblr_video_container iframe {
+		max-width: 320px;
+		max-height: 240px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.postcontent {
+		text-align: left;
+	}
 }
