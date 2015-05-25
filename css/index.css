@@ -436,7 +436,11 @@ footer div {
 	}
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
+	.tumblr_video_container, .tumblr_video_container iframe {
+		max-width: 240px;
+		max-height: 160px;
+	}
 	.postcontent {
 		text-align: left;
 	}
